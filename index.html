@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PortFolio Bernardo</title>
+</head>
+
+<body>
+
+    <div    class="particulas"></div>
+
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#" class="menulink">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menulink">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menulink">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menulink">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="Início" class="cabecalho">
+
+        <img src="imagens/bernardo.jpg" alt="Foto Perfil Bernardo Ziener" class="fotoperfil">
+        <h1>Bernardo Ziener</h1>
+        <p class="cabecalhosubtitulo">Desenvolvedor Iniciante em FrontEnd</p> <!--PAREI AQUI!!!!!!!!!!!!-->
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobretitulo">Sobre mim</h2>
+        <div class="sobrecaixa">
+            <p class="sobreparagrafo">
+                Olá, sou um desenvolvedor WEB iniciante dentro da área, este está sendo um dos meus primeiros projetos.
+                Estou sempre buscando novas experiências e sempre estudando para ampliar meus conhecimentos.</p>
+        </div>
+    </section>
+
+
+    <section id="projetos" class="projetos">
+    <h2 class="projetostitulo">Meus Projetos</h2>
+
+    <div class="projetoscaixa">
+
+        <div class="projetocard">
+            <img src="imagens/projeto1.png" alt="Primeiro Projeto" class="projetosimagem">
+
+            <div class="caixatextoprojeto">
+                <h3 class="infoprojetos">Loja de Carros</h3>
+                <p class="paragrafoprojetos">
+                    Uma loja virtual focada na venda e inspeção de veículos, garantindo qualidade, segurança e praticidade em cada negociação.
+                </p>
+            </div>
+        </div>
+
+        <div class="projetocard">
+            <img src="imagens/projeto2.png" alt="Segundo Projeto" class="projetosimagem">
+
+            <div class="caixatextoprojeto">
+                <h3 class="infoprojetos">Loja de Viagens</h3>
+                <p class="paragrafoprojetos">
+                    Uma agência de viagens que torna seus sonhos realidade, com praticidade, segurança e os melhores destinos.
+                </p>
+            </div>
+        </div>
+
+        <div class="projetocard">
+            <img src="imagens/projeto3.png" alt="Terceiro Projeto" class="projetosimagem">
+
+            <div class="caixatextoprojeto">
+                <h3 class="infoprojetos">Site Microsoft</h3>
+                <p class="paragrafoprojetos">
+                    Uma réplica incrível do site da Microsoft, desenvolvida para demonstrar habilidades em HTML, CSS e responsividade.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatostitulo">Entre em Contato</h2>
+
+        <form class="formulariocontato" id="formulario">
+            <div class="grupoformulario">
+                <input placeholder="Nome" class="campoformulario"   id="nome">
+        </div class="grupoformulario">
+            <textarea class="campoformulario" placeholder="Digite sua Mensagem" rows="6" id="mensagem" ></textarea>
+            </div>
+
+            <button type="submit"   class="botaoformulario">Enviar Whatsapp</button>
+        
+        </form>
+
+    </section>
+
+
+            <script>
+
+                    const formulario = document.getElementById('formulario');
+
+  formulario.addEventListener('submit', function(event) {
+      // Impede a página de recarregar
+      event.preventDefault(); 
+
+      // Captura o VALOR digitado nos campos (.value)
+                    const nome = document.getElementById('nome').value;
+                    const mensagem = document.getElementById('mensagem').value;
+                    const telefone = '5547996584541';
+
+      // Monta o texto da mensagem
+                    const texto = `Olá, ${nome}. 
+                    O que você deseja? ${mensagem}`;
+      
+      // Codifica o texto para o formato aceito em URLs
+                    const msgFormatada = encodeURIComponent(texto);
+
+      // Cria a URL oficial da API do WhatsApp
+                    const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`;
+
+      // Abre o WhatsApp em uma nova aba
+      window.open(url, '_blank');
+  });
+            </script>
+
+
+</body> 
+
+</html>
